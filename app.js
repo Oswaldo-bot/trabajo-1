@@ -1,132 +1,120 @@
 const products = [
-    { id: 1, name: "Buso negro", price: 300, image: "images/product1.jpg", sizes: ["XS", "S", "M", "L", "XL"] },
-    { id: 2, name: "Pantalon Caqui", price: 150, image: "images/product2.jpg", sizes: [30, 32, 34, 36, 38, 40, 42]  },
-    { id: 3, name: "Gorra negra", price: 200, image: "images/product3.jpg", sizes: ["Talla Unica"] },
-    { id: 12, name: "Gorro Gris", price: 200, image: "images/product3.jpg", sizes: ["Talla Unica"] },
-    { id: 4, name: "Pantalon Azul oscuro", price: 250, image: "images/product4.jpg",sizes: [30, 32, 34, 36, 38, 40, 42] },
-    { id: 5, name: "Tenis Blancos", price: 300, image: "images/product5.jpg", sizes: [32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 43] },
-    { id: 6, name: "Tenis Negros", price: 350, image: "images/product6.jpg", sizes: [32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 43] },
-    { id: 7, name: "Camisa Polo Blanca", price: 400, image: "images/product7.jpg", sizes: ["XS", "S", "M", "L", "XL"] },
-    { id: 8, name: "Camisa Polo Negra", price: 450, image: "images/product8.jpg", sizes: ["XS", "S", "M", "L", "XL"] },
-    { id: 9, name: "Camisa Polo Roja", price: 450, image: "images/product8.jpg",sizes: ["XS", "S", "M", "L", "XL"] },
-    { id: 10, name: "Camisa Polo azul", price: 450, image: "images/product8.jpg",sizes: ["XS", "S", "M", "L", "XL"] },
-    { id: 11, name: "Tenis Grices", price: 450, image: "images/product8.jpg",sizes: [32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 43] }
+    { id: 1, name: "Gorra Nike", price: 90.000, image: "images/product1.jpg",sizes: ["Talla Unica"],  colors: ["Blanco", "Rojo", "Negro", "Amarilla", "Azul","Gris"] },
+    { id: 2, name: "Gorro Style", price: 50.000, image: "images/product2.jpg",sizes: ["Talla Unica"],  colors: ["Blanco", "Rojo", "Negro", "Amarilla", "Azul","Gris"] },
+    { id: 1, name: "Camisa Tipo Polo", price: 72.000, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro","Rojo","Azul Oscuro","Verde Oscuro","Naranja Oscuro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["XS","S", "M", "L", "XL", "XXL"],  colors: ["Blanco", "Gris", "Negro"] },
+    { id: 1, name: "Producto 1", price: 100, image: "images/product1.jpg",sizes: ["28","30", "32", "34", "36", "38"],  colors: ["Blanco", "Gris", "Negro"] },
 
   ];
+
+ const productList = document.getElementById("product-list");
+const cartList = document.getElementById("cart-list");
+const totalPrice = document.getElementById("total-price");
+
+
+let cart = JSON.parse(localStorage.getItem('cart')) || []; // Recuperar carrito si existe
+
+// Cargar productos
+products.forEach(product => {
+    const productDiv = document.createElement("div");
+    productDiv.classList.add("product");
+    productDiv.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" class="product-image">
+      <h2>${product.name}</h2>
+      <p>Precio: $${product.price}</p>
+      
+      <!-- Selección de talla -->
+      <label for="size-${product.id}">Tamaño:</label>
+      <select id="size-${product.id}">
+        ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")}
+      </select>
   
-  const productList = document.getElementById("product-list");
-  const cartItems = document.getElementById("cart-items");
-  const totalPriceElement = document.getElementById("total-price");
-  const cartCount = document.getElementById("cart-count");
+      <!-- Selección de color -->
+      <label for="color-${product.id}">Color:</label>
+      <select id="color-${product.id}">
+        ${product.colors.map(color => `<option value="${color}">${color}</option>`).join("")}
+      </select>
   
-  let cart = [];
-  let totalPrice = 0;
-  
-  // Función para mostrar los productos
-  function displayProducts() {
-    productList.innerHTML = ""; // Limpia los productos anteriores
-  
-    products.forEach(product => {
-      const productDiv = document.createElement("div");
-      productDiv.classList.add("product");
-  
-      // Crear selector de tallas dinámicamente
-      let sizeOptions = "";
-      product.sizes.forEach(size => {
-        sizeOptions += `<option value="${size}">${size}</option>`;
-      });
-  
-      productDiv.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" class="product-image">
-        <h2>${product.name}</h2>
-        <p>Precio: $${product.price}</p>
-        <label for="size-${product.id}">Talla:</label>
-        <select id="size-${product.id}" class="size-select">
-          ${sizeOptions}
-        </select>
-        <button onclick="addToCart(${product.id})">Añadir al carrito</button>
-      `;
-      productList.appendChild(productDiv);
-    });
-  }
-  
-  
-  function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    const selectedSize = document.getElementById(`size-${productId}`).value;
-  
-    // Agregar el producto con la talla seleccionada al carrito
-    cart.push({ ...product, selectedSize });
-    totalPrice += product.price;
-    updateCartDisplay();
-  }
-  
-   
-  
-  // Función para eliminar productos del carrito
-  function removeFromCart(productId) {
-    const productIndex = cart.findIndex(item => item.id === productId);
-    if (productIndex !== -1) {
-      totalPrice -= cart[productIndex].price;
-      cart.splice(productIndex, 1);
-      updateCartDisplay();
+      <button onclick="addToCart(${product.id})">Añadir al carrito</button>
+    `;
+    productList.appendChild(productDiv);
+  });
+ 
+
+// Añadir al carrito
+function addToCart(productId) {
+    const sizeSelect = document.getElementById(`size-${productId}`);
+    const colorSelect = document.getElementById(`color-${productId}`);
+    
+    const selectedSize = sizeSelect.value; // Obtener la talla seleccionada
+    const selectedColor = colorSelect.value; // Obtener el color seleccionado
+    
+    if (!selectedSize || !selectedColor) {
+      alert("Por favor, selecciona una talla y un color.");
+      return;
     }
+  
+    const product = products.find(prod => prod.id === productId);
+    cart.push({ ...product, size: selectedSize, color: selectedColor }); // Guardar producto con talla y color
+    renderCart();
   }
   
-  // Función para actualizar la visualización del carrito
-  function updateCartDisplay() {
-    cartItems.innerHTML = ""; // Limpia el carrito actual
+// Función para actualizar el carrito visualmente
+function updateCart() {
+    const cartItemsList = document.getElementById("cart-items");
+    cartItemsList.innerHTML = "";
   
     cart.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.name} - $${item.price}`;
+      cartItemsList.appendChild(li);
+    })
+}
+
+// Mostrar carrito
+function renderCart() {
+    const cartList = document.getElementById("cart-list");
+    const totalPrice = document.getElementById("total-price");
+    cartList.innerHTML = ""; // Limpiar la lista de carrito
+
+    let total = 0;
+
+    cart.forEach(product => {
       const cartItem = document.createElement("li");
-      cartItem.classList.add("cart-item");
       cartItem.innerHTML = `
-        ${item.name} - Talla: ${item.selectedSize} - $${item.price}
-        <button class="delete-button" onclick="removeFromCart(${item.id})">Eliminar</button>
+        ${product.name} - $${product.price}
+        <button onclick="removeFromCart(${product.id})">Eliminar</button>
       `;
-      cartItems.appendChild(cartItem);
+      cartList.appendChild(cartItem);
+      total += product.price;
     });
-  
-    totalPriceElement.textContent = `Total: $${totalPrice}`;
-    cartCount.textContent = cart.length;
-  }  
-  
-  
-  // Mostrar los productos al cargar la página
-  displayProducts();
 
-// Botón de finalizar compra
-document.getElementById("checkout-button").addEventListener("click", openModal);
-
-// Función para abrir el modal de pago
-function openModal() {
-  document.getElementById("payment-modal").style.display = "flex";
-}
-
-// Función para cerrar el modal de pago
-function closeModal() {
-  document.getElementById("payment-modal").style.display = "none";
-}
-
-// Función para seleccionar el método de pago
-function selectPayment(method) {
-  alert(`Has seleccionado pagar con ${method}.`);
-  closeModal();
-}
-
-// Función para agregar al carrito con validación
-function agregarAlCarrito() {
-  // Obtener el valor de la selección
-  const tallaSeleccionada = document.getElementById('talla').value;
-
-  // Verificar si se ha seleccionado una talla
-  if (tallaSeleccionada === "") {
-    // Mostrar el mensaje de error
-    document.getElementById('error-message').style.display = "block";
-  } else {
-    // Si se seleccionó una talla, ocultar el mensaje de error (si es visible)
-    document.getElementById('error-message').style.display = "none";
-    // Aquí puedes agregar el producto al carrito o hacer cualquier otra acción
-    alert('Producto agregado al carrito con la talla: ' + tallaSeleccionada);
+    totalPrice.textContent = `Total: $${total}`;
   }
-}
+
+// Eliminar del carrito
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCart();
+};
+
+function openCheckoutForm() {
+    document.getElementById("checkout-form").style.display = "block";
+  }
+  
+  renderCart();

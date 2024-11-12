@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Compra</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Formulario de Compra</h1>
+  </header>
+
+  <main>
+    <form id="checkout-form">
+      <h2>Información Personal</h2>
+      
+      <label for="first-name">Nombres:</label>
+      <input type="text" id="first-name" required>
+
+      <label for="last-name">Apellidos:</label>
+      <input type="text" id="last-name" required>
+
+      <label for="document-type">Tipo de Contribuyente:</label>
+      <select id="document-type" required>
+        <option value="">Seleccione una opción</option>
+        <option value="cedula">Cédula</option>
+        <option value="tarjeta-identidad">Tarjeta de Identidad</option>
+        <option value="registro-civil">Registro Civil</option>
+        <option value="nit">NIT (Número de Identificación Tributaria)</option>
+        <option value="pasaporte">Pasaporte (Número de Identificació Pasaporte)</option>
+      </select>
+
+      <label for="document-number">Número de Documento:</label>
+      <input type="text" id="document-number" required>
+
+      <h2>Información de Contacto</h2>
+
+      <label for="address">Dirección:</label>
+      <input type="text" id="address" required>
+
+      <label for="additional-info">Información Adicional:</label>
+      <input type="text" id="additional-info">
+
+      <label for="department">Departamento:</label>
+      <input type="text" id="department" required>
+
+      <label for="city">Ciudad:</label>
+      <input type="text" id="city" required>
+
+      <label for="postal-code">Código Postal:</label>
+      <input type="text" id="postal-code" required>
+
+      <label for="phone">Teléfono:</label>
+      <input type="text" id="phone" required>
+
+      <h2>Sistema de Información</h2>
+
+      <label for="person-type">Tipo de Persona:</label>
+      <select id="person-type" required>
+        <option value="">Seleccione una opción</option>
+        <option value="natural">Persona Natural</option>
+        <option value="juridica">Persona Jurídica</option>
+      </select>
+
+      <h2>Método de Pago</h2>
+
+      <label for="payment-method">Método de Pago:</label>
+      <select id="payment-method" required>
+        <option value="">Seleccione un método de pago</option>
+        <option value="pse">PSE</option>
+        <option value="efecty">EFECTY</option>
+        <option value="addi">ADDI</option>
+        <option value="tarjeta-credito">Tarjeta de Crédito</option>
+        <option value="tarjeta-debito">Tarjeta de Débito</option>
+      </select>
+
+      <button type="button" onclick="validateForm()">Finalizar Compra</button>
+    </form>
+    <section id="checkout-summary">
+        <h2>Productos en tu Carrito</h2>
+        <ul id="checkout-cart-list">
+          <!-- Los productos se cargarán aquí con JavaScript -->
+        </ul>
+        
+        <div id="checkout-total">
+          <p id="total-price-summary">Total de Productos: $0</p>
+          <p id="shipping-cost">Costo de Envío: $5</p> <!-- Valor de envío fijo, puedes modificarlo si es necesario -->
+          <p id="final-total">Total Final: $0</p>
+        </div>
+      </section>
+
+    <!-- Botón para regresar a la tienda -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="index.html"><button type="button">Regresar a la Tienda</button></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Mi E-commerce</p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const requiredFields = [
+        'first-name', 'last-name', 'document-type', 'document-number',
+        'address', 'department', 'city', 'postal-code', 'phone',
+        'person-type', 'payment-method'
+      ];
+
+      let allFieldsFilled = true;
+      for (let field of requiredFields) {
+        const input = document.getElementById(field);
+        if (!input.value) {
+          allFieldsFilled = false;
+          input.style.border = '2px solid red'; // Marca los campos vacíos en rojo
+        } else {
+          input.style.border = ''; // Quita el borde si el campo está lleno
+        }
+      }
+
+      if (!allFieldsFilled) {
+        alert("Por favor complete todos los campos obligatorios.");
+      } else {
+        alert("Compra finalizada con éxito.");
+        document.getElementById("checkout-form").submit(); // Envía el formulario si todo está completo
+      }
+    }
+  // Cargar los productos del carrito desde el almacenamiento local (localStorage)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Mostrar el resumen de los productos en el carrito
+    const checkoutCartList = document.getElementById('checkout-cart-list');
+    const totalPriceSummary = document.getElementById('total-price-summary');
+    const shippingCost = document.getElementById('shipping-cost');
+    const finalTotal = document.getElementById('final-total');
+
+    let totalProductPrice = 0;
+
+    // Mostrar productos en el carrito y calcular el precio total
+    cart.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${item.name} - $${item.price} - Talla: ${item.size} - Color: ${item.color}`;
+      checkoutCartList.appendChild(listItem);
+
+      totalProductPrice += item.price;
+    });
+
+    // Calcular y mostrar el total con el costo de envío
+    const shipping = 5;  // Costo de envío fijo (puedes modificarlo según sea necesario)
+    const finalAmount = totalProductPrice + shipping;
+
+    totalPriceSummary.textContent = `Total de Productos: $${totalProductPrice}`;
+    shippingCost.textContent = `Costo de Envío: $${shipping}`;
+    finalTotal.textContent = `Total Final: $${finalAmount}`;
+
+    // Almacenamos el carrito en el localStorage para usarlo más tarde
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Validación de datos del formulario de facturación
+    document.getElementById('billing-form').addEventListener('submit', function(event) {
+      event.preventDefault();  // Prevenir el envío del formulario
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+
+      // Validación de los campos
+      if (!name || !email || !address) {
+        alert('Por favor, completa todos los campos.');
+        return;
+      }
+
+      // Simulación de la finalización de la compra
+      alert(`Gracias por tu compra, ${name}! El total a pagar es $${finalAmount}.`);
+
+      // Aquí podrías redirigir a una página de confirmación o realizar el procesamiento de la compra.
+    });
+  </script>
+</body>
+</html>
